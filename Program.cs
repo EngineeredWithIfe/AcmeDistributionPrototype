@@ -1,9 +1,13 @@
-using System;
+using Microsoft.Maui;
+using Microsoft.Maui.Hosting;
 
-class Program
+namespace MyApp
 {
-  public static void Main(string[] args)
-  {
+    public class Program : MauiApplication
+    {
+        public static void Main(string[] args) =>
+            MauiApplication.CreateBuilder().UseMauiApp<App>().Build().Run(args);
 
-  }
+        protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
+    }
 }
